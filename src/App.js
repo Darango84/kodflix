@@ -35,9 +35,7 @@ function App() {
           title="Wolf of Wall Street, 2013"
           rating="★★★★★"
     />
-</div>
 
-<div className="filmContainer">
     <Film image={avengers}
           altMessage="This is the cover for the Avengers Infinity War film"
           title="Avengers Infinity War Street, 2019"
