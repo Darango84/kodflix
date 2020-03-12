@@ -1,0 +1,35 @@
+.menu {
+    color: silver;
+    list-style-type: none;
+    margin-bottom: 50px;
+    display: flex;
+    padding: 10px 0 20px 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .appHeader {
+    color: red;
+    font-size: 50px;
+    margin: 10px 20px 20px 20px;
+    text-decoration: none;
+  }
+  
+  .menuItem {
+    font-size: 18px;
+    justify-content: flex-start;
+    margin: 1%;
+  }
+
+  .menuItem:hover {
+    font-size: 19px;
+  }
+
+  @media screen and (max-width: 600px){
+      .appHeader {
+          font-size: 35px;
+      }
+      .menuItem {
+        font-size: 16px;
+      }
+  }

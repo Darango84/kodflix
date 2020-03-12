@@ -1,0 +1,13 @@
+h1 {
+    color: silver;
+    text-align: center;
+    margin: 10%;    
+}
+
+
+.link {
+    color: white;
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}

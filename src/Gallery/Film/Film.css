@@ -1,8 +1,9 @@
   .filmImage {
     flex: 1;
     min-width: 350px;
-    max-width: 500px;
-    height: 600px;
+    max-width: 600px;
+    min-height: 600px;
+    max-height: 800px;
     padding: 0;
     margin: 1%;
     position: relative;
@@ -36,4 +37,9 @@
     transition:  padding ease 0.5s;
   }
   
+  @media screen and (max-width: 600px){
+    .filmImage {
+      margin: 2% 5%;
+    }
+  }
   

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Gallery from './Gallery/Gallery';
 import FilmDetails from './Gallery/FilmDetails/FilmDetails';
+import Menu from './Menu/Menu'
 import {
   BrowserRouter,
   Route,
@@ -12,11 +13,10 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <div>
-          <h1>Kodflix</h1>
+        
+          <Menu />
           <Route path="/" exact component={Gallery} />
           <Route path="/:details" exact component={FilmDetails} />
-        </div>
 
         <br/>>
       <div>
