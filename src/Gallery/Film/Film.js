@@ -2,7 +2,7 @@ import React from 'react';
 import './Film.css';
 import { Link } from 'react-router-dom';
 
-
+//this component defines the structure and properties of our films
 
 export default function Film(props){
     return (

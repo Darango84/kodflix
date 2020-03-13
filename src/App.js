@@ -16,7 +16,7 @@ function App() {
         
           <Menu />
           <Route path="/" exact component={Gallery} />
-          <Route path="/:details" exact component={FilmDetailsMessage} />
+          <Route path="/:filmId" exact component={FilmDetailsMessage} />
 
         <br/>>
       <div>

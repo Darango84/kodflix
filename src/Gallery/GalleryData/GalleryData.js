@@ -6,7 +6,7 @@ import avengers from '../FilmCovers/avengers.jpg';
 import pacificRim from '../FilmCovers/pacificRim.jpeg';
 import americanPsycho from '../FilmCovers/americanPsycho.jpg';
 
-
+//This function holds the actual data for all the films we have currently
 
 export default function getFilmData() {
     return  [    
