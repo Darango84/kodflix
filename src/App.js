@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Gallery from './Gallery/Gallery';
-import FilmDetails from './Gallery/FilmDetails/FilmDetails';
+import FilmDetailsMessage from './Gallery/FilmDetails/FilmDetails';
 import Menu from './Menu/Menu'
 import {
   BrowserRouter,
@@ -16,7 +16,7 @@ function App() {
         
           <Menu />
           <Route path="/" exact component={Gallery} />
-          <Route path="/:details" exact component={FilmDetails} />
+          <Route path="/:details" exact component={FilmDetailsMessage} />
 
         <br/>>
       <div>

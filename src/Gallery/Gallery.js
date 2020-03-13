@@ -4,7 +4,7 @@ import Film from './Film/Film';
 import  getFilmData from './GalleryData/GalleryData';
 
 
-export default function Gallery() {
+export default function gallery() {
   return (
     <div className="filmContainer">
         {
