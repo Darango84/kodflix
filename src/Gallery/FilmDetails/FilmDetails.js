@@ -35,8 +35,8 @@ export default class FilmDetailsMessage extends React.Component {
           <p className="filmSynopsys">{this.state.film.synopsys}</p>
         </div>
 
-        <div>
-          <Link to="./" className="link">Back to Homepage</Link>
+        <div className="linkContainer">
+          <Link to="./" className="link">◀︎ Go Back</Link>
         </div>
 
       </div>
