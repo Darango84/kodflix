@@ -1,36 +1,45 @@
-import React from 'react';
-import './FilmDetails.css';
-import getFilmData from '../GalleryData/GalleryData';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./FilmDetails.css";
+import getFilmData from "../GalleryData/GalleryData";
+import { Link, Redirect } from "react-router-dom";
 
-//This component creates a page where the Film details will be displayed,
-//but at present it renders a message that then changes to 'Coming Soon' after 1sec
+//This component creates a page where the Film details are displayed
 
 export default class FilmDetailsMessage extends React.Component {
-   constructor() {
-      super();
-      this.state = {
-         film: {}
-      };
-    }
+  constructor() {
+    super();
+    this.state = { film: {} };
+  }
 
-      componentDidMount() {
-          let filmId = this.props.match.params.filmId;
-          let film = getFilmData()
-            .find((film) => film.id === filmId);
-            
-            this.setState({
-                film: film 
-            });
-        }
-   
+  componentDidMount() {
+    let filmId = this.props.match.params.filmId;
+    let film = getFilmData().find(film => film.id === filmId);
 
-   render() {
-      return (
-         <div>
-            <h3 className="detailsTitle">{this.state.film.title}</h3>
-            <Link to='./' className="link">Back to Homepage</Link>
-         </div>
-      );
-   }
+    this.setState({
+      film: film
+    });
+  }
+
+  render() { //if the film isnt found, the app redirects to the Not Found page
+      if (!this.state.film){
+         return <Redirect to="/not-found" />
+      }
+        
+    return (
+      <div>
+        <h3 className="detailsTitle">{this.state.film.title}</h3>
+        <h3 className="rating">{this.state.film.rating}</h3>
+
+        <div className="detailsContainer">
+          <img className="filmDetailsImage" src={this.state.film.image} alt={this.state.film.altMessage}></img>
+          <p className="filmSynopsys">{this.state.film.synopsys}</p>
+        </div>
+
+        <div>
+          <Link to="./" className="link">Back to Homepage</Link>
+        </div>
+
+      </div>
+    );
+  }
 }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Menu() {
     return (
-        <div>
+        <div className="fixedMenu">
             <ul className="menu">
                 <Link to='./' className="appHeader"><li>Kodflix</li></Link>
                 <li className="menuItem">Films</li>

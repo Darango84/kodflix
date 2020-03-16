@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(8, 8, 8);
+  background-color: #222831;
+  padding-top: 60px;
   
 }
 
@@ -7,6 +8,7 @@ body {
   color: white;
   font-size: 14px;
   text-align: center;
+  margin-top: 3%;
 }
 
 

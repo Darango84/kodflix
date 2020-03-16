@@ -1,14 +1,63 @@
-.detailsTitle {
-    color: silver;
-    font-size: 40px;
-    text-align: center;
-    margin: 10%;    
+.detailsContainer {
+    display: flex;
 }
 
+.detailsTitle {
+    color: silver;
+    font-size: 30px;
+    text-align: left;
+    margin: 70px 1% 1% 2%; 
+       
+}
+
+.rating {
+    color: gold;
+    font-size: 15px;
+    text-align: left;
+    margin: 2%;
+    margin-bottom: 0;
+}
+
+.filmDetailsImage {
+    width: 30%;
+    height: 35%;
+    margin: 30px 1% 20% 2%;
+    border-radius: 5%;
+    box-shadow: silver;
+    box-shadow: 10px 10px 10px black;
+}
+
+.filmSynopsys {
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    margin: 30px 1% 1% 2%;
+    margin-right: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .filmSynopsys {
+      font-size: 12px;
+    }
+    .filmDetailsImage {
+        width: 50%;
+        height: 40%;
+        margin-right: 1%
+    }
+    .detailsTitle {
+        font-size: 20px;
+    }
+    .rating {
+        font-size: 14px;
+    }
+  } 
 
 .link {
     color: white;
     display: block;
     text-align: center;
-    margin-bottom: 50px;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    text-decoration: none;
 }
+
