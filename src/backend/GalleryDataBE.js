@@ -40,4 +40,4 @@ module.exports = function getFilmData() {
         id: "AmericanPsycho",
         synopsys: "American Psycho is a 2000 satirical psychological horror film co-written and directed by Mary Harron, based on Bret Easton Ellis's 1991 novel of the same name." ,
         }];
- }
+ };

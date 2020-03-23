@@ -25,6 +25,7 @@ function App() {
       <div>
         <p className="footer">An app by Dan Arango ™</p>
       </div>
+      
     </BrowserRouter>
 </div>
   );
