@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Gallery.css';
 import Film from './Film/Film';
-import  getFilmData from './GalleryData/GalleryData';
+
 
 //This component pulls the data for each film from GalleryData using .map()
 
@@ -21,7 +21,7 @@ export default class gallery extends Component {
     return (
       <div className="filmContainer">
           {
-          getFilmData().map(film => (
+          this.state.Film.map(film => (
               <Film
                   key={film.id}
                   image={film.image}
