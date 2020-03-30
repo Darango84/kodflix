@@ -1,45 +1,61 @@
-import React from "react";
-import "./FilmDetails.css";
-import getFilmData from "../GalleryData/GalleryData";
-import { Link, Redirect } from "react-router-dom";
+import React from 'react';
+import './FilmDetails.css';
+import { Link, Redirect } from 'react-router-dom';
 
 //This component creates a page where the Film details are displayed
 
-export default class FilmDetailsMessage extends React.Component {
+export default class FilmDetails extends React.Component {
   constructor() {
     super();
     this.state = { film: {} };
   }
 
   componentDidMount() {
-    let filmId = this.props.match.params.filmId;
-    let film = getFilmData().find(film => film.id === filmId);
+    fetch('/rest/films')
+    .then(res => res.json())
 
-    this.setState({
-      film: film
+    .then(films => {
+      let filmId = this.props.match.params.filmId;
+      let film = films.find(film => film.id === filmId);
+      this.setState({ film });
     });
   }
 
+
   render() { //if the film isnt found, the app redirects to the Not Found page
-      if (!this.state.film){
-         return <Redirect to="/not-found" />
-      }
+    let film = this.state.film;  
+   
+    if (film) {
+      return film.id ?
+       <DetailsContent film={film} /> :
+       <div />;
         
-    return (
-      <div>
-        <h3 className="detailsTitle">{this.state.film.title}</h3>
-        <h3 className="rating">{this.state.film.rating}</h3>
-
-        <div className="detailsContainer">
-          <img className="filmDetailsImage" src={this.state.film.image} alt={this.state.film.altMessage}></img>
-          <p className="filmSynopsys">{this.state.film.synopsys}</p>
-        </div>
-
-        <div className="linkContainer">
-          <Link to="./" className="link">◀︎ Go Back</Link>
-        </div>
-
-      </div>
-    );
+    } else {
+      return <Redirect to='/not-found' />;
+    }
   }
+}
+
+function DetailsContent({ film }) {
+  return (
+    <div>
+      
+      <h3 className="detailsTitle">{film.title}</h3>
+      <h3 className="rating">{film.rating}</h3>
+
+      <div className="detailsContainer">
+
+        <img 
+          className="filmDetailsImage" 
+          src={require(`../../common/images/${film.id}.jpg`)}
+          alt={film.altMessage} />
+        <p className="filmSynopsys">{film.synopsys}</p>
+      </div>
+
+      <div className="linkContainer">
+        <Link to="./" className="link">◀︎ Go Back</Link>
+      </div>
+
+    </div>
+  )
 }

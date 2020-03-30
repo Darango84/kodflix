@@ -11,4 +11,4 @@ app.use(express.static(path.join(__dirname, '../../build'))); // This serves the
 
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../../build', 'index.html'))); // React routing for our entry point
 
-app.listen(port, () => console.log(`Listening on port ${port}!`));
+app.listen(port, () => console.log(`Listening on port ${port}`));
